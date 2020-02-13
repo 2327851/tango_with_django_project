@@ -35,9 +35,7 @@
 		<h2>Most Viewed Pages</h2>
 			<ul>
 			{% for page in pages %}
-				<li>
-					<a href="{{ page.url }}/">{{ page.title }}</a>
-				</li>
+				<li>{{ page.title }}</li>
 			{% endfor %}
 			</ul>
 		{% else %}
