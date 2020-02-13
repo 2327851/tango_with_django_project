@@ -59,9 +59,9 @@ def add_page(cat, title, url, views=0):
     p = Page.objects.get_or_create(category=cat, title=title)[0]
     p.url=url
     if views == 0:
-        p.views=7
+        p.views+=7
     else:
-        p.views=views
+        p.views+=views
     p.save()
     return p
 
