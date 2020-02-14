@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login 
+from django.contrib.auth.decorators import login_required
 from rango.models import Page
 from django.http import HttpResponse
 from rango.models import Category
@@ -131,5 +132,6 @@ def user_login(request):
     else:
         return render(request, 'rango/login.html')
 
-
-
+@login_required
+def restricted(request):
+    return HttpResponse("Since you're logged in, you can see this text!")
